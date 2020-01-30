@@ -8,7 +8,7 @@ namespace MyBankerH2
 {
     class Maestro : Card
     {
-        public Maestro()
+        public Maestro(string cardHolderName) : base(cardHolderName)
         {
             this.StartingNumbers = new string[]
             {
@@ -29,6 +29,11 @@ namespace MyBankerH2
         public override void GenerateCard()
         {
             base.GenerateCard();
+        }
+
+        public override string ToString()
+        {
+            return this.CardHolderName + " card with number " + this.CardNumber;
         }
     }
 }

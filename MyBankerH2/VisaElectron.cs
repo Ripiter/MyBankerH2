@@ -12,7 +12,7 @@ namespace MyBankerH2
         private string expirationDate;
 
 
-        public VisaElectron()
+        public VisaElectron(string cardHolderName) : base(cardHolderName)
         {
             this.LenghtOfCard = 16;
 
@@ -24,11 +24,25 @@ namespace MyBankerH2
                 "4913",
                 "4917"
             };
+
+            CalculateExpireDate();
         }
 
         public override void GenerateCard()
         {
             base.GenerateCard();
+        }
+
+        public void CalculateExpireDate()
+        {
+            ExpirationDate = DateTime.Now.ToString() + " + 5years";
+        }
+
+
+        public override string ToString()
+        {
+            //+" Expires " + ((IExpire)card).ExpirationDate
+            return this.CardHolderName + " card with number " + this.CardNumber + " Expires " + this.ExpirationDate;
         }
     }
 }

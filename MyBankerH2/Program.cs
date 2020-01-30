@@ -10,19 +10,22 @@ namespace MyBankerH2
     {
         static void Main(string[] args)
         {
-            Card visa = new VisaElectron();
-            Card maestro = new Maestro();
+            //Card visa = new VisaElectron();
+            //Card maestro = new Maestro();
 
             Card[] cards =
             {
-                new VisaElectron(),
-                new Maestro()
+                new VisaElectron("Rex"),
+                new Maestro("Josef")
             };
 
             foreach (Card card in cards)
             {
                 card.GenerateCard();
-                Console.WriteLine(card.CardNumber);
+                if(card is IExpire)
+                    Console.WriteLine(card.ToString());
+                else
+                    Console.WriteLine(card.ToString());
             }
 
             Console.ReadKey();

@@ -9,5 +9,6 @@ namespace MyBankerH2
     interface IExpire
     {
         string ExpirationDate { get; set; }
+        void CalculateExpireDate();
     }
 }

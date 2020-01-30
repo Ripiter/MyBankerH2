@@ -8,10 +8,24 @@ namespace MyBankerH2
 {
     abstract class Card
     {
+        public Card(string cardHolderName)
+        {
+            this.CardHolderName = cardHolderName;
+        }
+        private string cardHolderName;
+
+        public string CardHolderName
+        {
+            get { return cardHolderName; }
+            set { cardHolderName = value; }
+        }
+
+
+
         int lenghtOfCard;
         string[] startingNumbers;
         string cardNumber;
-
+        
         public string CardNumber
         {
             get
@@ -47,7 +61,7 @@ namespace MyBankerH2
             }
         }
 
-       
+        
 
     }
 }
