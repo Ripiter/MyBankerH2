@@ -20,6 +20,13 @@ namespace MyBankerH2
             set { cardHolderName = value; }
         }
 
+        private byte ageLimit;
+
+        public byte AgeLimit
+        {
+            get { return ageLimit; }
+            protected set { ageLimit = value; }
+        }
 
 
         int lenghtOfCard;

@@ -15,7 +15,7 @@ namespace MyBankerH2
         public VisaElectron(string cardHolderName) : base(cardHolderName)
         {
             this.LenghtOfCard = 16;
-
+            this.AgeLimit = 15;
             this.StartingNumbers = new string[]{
                 "4026",
                 "417500",
@@ -25,6 +25,7 @@ namespace MyBankerH2
                 "4917"
             };
 
+            GenerateCard();
             CalculateExpireDate();
         }
 

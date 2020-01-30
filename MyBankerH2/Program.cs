@@ -10,23 +10,20 @@ namespace MyBankerH2
     {
         static void Main(string[] args)
         {
-            //Card visa = new VisaElectron();
+
             //Card maestro = new Maestro();
+            Person person = new Person("Rotatan", 50);
+            Bank bank = new Bank();
+            Console.WriteLine(bank.ShowExamples(person.Age));
 
-            Card[] cards =
-            {
-                new VisaElectron("Rex"),
-                new Maestro("Josef")
-            };
 
-            foreach (Card card in cards)
-            {
-                card.GenerateCard();
-                if(card is IExpire)
-                    Console.WriteLine(card.ToString());
-                else
-                    Console.WriteLine(card.ToString());
-            }
+            Console.WriteLine("What card do you want");
+            string cardChoice = Console.ReadLine().ToLower();
+            Card card = bank.GivePersonCard(cardChoice, person.Name);
+
+            Console.WriteLine(person.AddCardToWallet(card));
+
+
 
             Console.ReadKey();
         }

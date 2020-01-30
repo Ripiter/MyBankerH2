@@ -6,38 +6,31 @@ using System.Threading.Tasks;
 
 namespace MyBankerH2
 {
-    class Maestro : Card, IExpire
+    class MasterCard : Card, IExpire
     {
-        public Maestro(string cardHolderName) : base(cardHolderName)
+        public MasterCard(string cardHolderName) : base(cardHolderName)
         {
+            this.LenghtOfCard = 14;
             this.AgeLimit = 18;
+
             this.StartingNumbers = new string[]
             {
-                "5018",
-                "5020",
-                "5038",
-                "5893",
-                "6304",
-                "6759",
-                "6761",
-                "6762",
-                "6763"
+                "51",
+                "52",
+                "53",
+                "54",
+                "55"
             };
 
-            this.LenghtOfCard = 19;
             GenerateCard();
+            CalculateExpireDate();
         }
 
         public string ExpirationDate { get => expire; set => expire = value; }
         string expire;
         public void CalculateExpireDate()
         {
-            ExpirationDate = DateTime.Now + " 5,8 years";
-        }
-
-        public override void GenerateCard()
-        {
-            base.GenerateCard();
+            ExpirationDate = DateTime.Now + " + 5years";
         }
 
         public override string ToString()
