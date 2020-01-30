@@ -17,8 +17,10 @@ namespace MyBankerH2
                 new Haevekort("Heavekort")
         };
 
-        public Card GivePersonCard(string cardName, string cardHolderName)
+        public Card GivePersonCard(string cardName, string cardHolderName, string posibilites)
         {
+            if (!posibilites.Contains(cardName))
+                return null;
             Card card = null;
             switch (cardName)
             {
