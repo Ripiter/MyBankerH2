@@ -21,28 +21,18 @@ namespace MyBankerH2
         {
             if (!posibilites.Contains(cardName))
                 return null;
+
             Card card = null;
-            switch (cardName)
+
+            foreach (Card item in cards)
             {
-                case "maestro":
-                    card = new Maestro(cardHolderName);
-                    break;
-                case "mastercard":
-                    card = new MasterCard(cardHolderName);
-                    break;
-                case "haevekort":
-                    card = new Haevekort(cardHolderName);
-                    break;
-                case "visaelectron":
-                    card = new VisaElectron(cardHolderName);
-                    break;
-                case "visadankort":
-                    card = new VisaDanKort(cardHolderName);
-                    break;
-                default:
-                    card = new Haevekort(cardHolderName);
-                    break;
+                if(item.CardHolderName == cardName)
+                {
+                    item.CardHolderName = cardHolderName;
+                    card = item;
+                }
             }
+
             return card;
         }
 

@@ -18,7 +18,7 @@ namespace MyBankerH2
             Console.WriteLine(examples);
 
             Console.WriteLine("What card do you want");
-            string cardChoice = Console.ReadLine().ToLower();
+            string cardChoice = Console.ReadLine();
             Card card = bank.GivePersonCard(cardChoice, person.Name, examples);
             if(card != null)
                 Console.WriteLine(person.AddCardToWallet(card));

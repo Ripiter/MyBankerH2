@@ -26,7 +26,7 @@ namespace MyBankerH2
             };
 
             GenerateCard();
-            CalculateExpireDate();
+            CalculateExpireDate(); // Add it to generate card
         }
 
         public override void GenerateCard()
