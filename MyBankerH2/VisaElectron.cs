@@ -24,14 +24,13 @@ namespace MyBankerH2
                 "4913",
                 "4917"
             };
-
-            GenerateCard();
-            CalculateExpireDate(); // Add it to generate card
+            
         }
 
         public override void GenerateCard()
         {
             base.GenerateCard();
+            CalculateExpireDate();
         }
 
         public void CalculateExpireDate()

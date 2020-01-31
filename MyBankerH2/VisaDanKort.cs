@@ -16,13 +16,18 @@ namespace MyBankerH2
             {
                 "4",
             };
-
-            GenerateCard();
-            CalculateExpireDate();
+            
         }
 
         public string ExpirationDate { get => expire; set => expire = value; }
         string expire;
+
+        public override void GenerateCard()
+        {
+            base.GenerateCard();
+            CalculateExpireDate();
+        }
+
         public void CalculateExpireDate()
         {
             ExpirationDate = DateTime.Now + " + 5years";

@@ -8,7 +8,7 @@ namespace MyBankerH2
 {
     class Bank
     {
-        Card[] cards =
+        Card[] possibleCards =
         {
                 new VisaElectron("VisaElectron"),
                 new VisaDanKort("VisaDankort"),
@@ -24,7 +24,7 @@ namespace MyBankerH2
 
             Card card = null;
 
-            foreach (Card item in cards)
+            foreach (Card item in possibleCards)
             {
                 if(item.CardHolderName == cardName)
                 {
@@ -32,7 +32,10 @@ namespace MyBankerH2
                     card = item;
                 }
             }
+            
 
+            //Generate new card number for the person
+            card.GenerateCard();
             return card;
         }
 
@@ -40,7 +43,7 @@ namespace MyBankerH2
         {
             string temp = string.Empty;
 
-            foreach (Card card in cards)
+            foreach (Card card in possibleCards)
             {
                 if (card.AgeLimit <= age)
                 {

@@ -11,6 +11,8 @@ namespace MyBankerH2
         public Card(string cardHolderName)
         {
             this.CardHolderName = cardHolderName;
+            this.StartingNumbers = startingNumbers;
+            this.AgeLimit = ageLimit;
         }
         private string cardHolderName;
 
@@ -57,10 +59,10 @@ namespace MyBankerH2
             {
                 cardNumber += new Random(Guid.NewGuid().GetHashCode()).Next(0, 10);
             }
-            MakePretty();
+            MakeCardPretty();
         }
 
-        void MakePretty()
+        void MakeCardPretty()
         {
             for (int i = 4; i < LenghtOfCard + prefix.Length; i += 5)
             {

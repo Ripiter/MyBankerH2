@@ -21,8 +21,11 @@ namespace MyBankerH2
                 "54",
                 "55"
             };
+        }
 
-            GenerateCard();
+        public override void GenerateCard()
+        {
+            base.GenerateCard();
             CalculateExpireDate();
         }
 

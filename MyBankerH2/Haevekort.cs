@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBankerH2
 {
-    class Haevekort : Card, IExpire
+    class Haevekort : Card
     {
         public Haevekort(string cardHolderName) : base(cardHolderName)
         {
@@ -16,21 +16,12 @@ namespace MyBankerH2
             {
                 "2400",
             };
-
-            GenerateCard();
-            CalculateExpireDate();
-        }
-        string expire;
-        public string ExpirationDate { get => expire; set => expire = value; }
-
-        public void CalculateExpireDate()
-        {
-            ExpirationDate = DateTime.Now + " + 5years";
+            
         }
 
         public override string ToString()
         {
-            return this.CardHolderName + " card with number " + this.CardNumber + " Expires " + this.ExpirationDate;
+            return this.CardHolderName + " card with number " + this.CardNumber;
         }
     }
 }

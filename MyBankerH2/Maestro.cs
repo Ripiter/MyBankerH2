@@ -25,7 +25,12 @@ namespace MyBankerH2
             };
 
             this.LenghtOfCard = 19;
-            GenerateCard();
+        }
+
+        public override void GenerateCard()
+        {
+            CalculateExpireDate();
+            base.GenerateCard();
         }
 
         public string ExpirationDate { get => expire; set => expire = value; }
@@ -35,10 +40,7 @@ namespace MyBankerH2
             ExpirationDate = DateTime.Now + " 5,8 years";
         }
 
-        public override void GenerateCard()
-        {
-            base.GenerateCard();
-        }
+        
 
         public override string ToString()
         {
