@@ -24,7 +24,6 @@ namespace MyBankerH2
                 "4913",
                 "4917"
             };
-            
         }
 
         public override void GenerateCard()

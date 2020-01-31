@@ -14,6 +14,7 @@ namespace MyBankerH2
             this.StartingNumbers = startingNumbers;
             this.AgeLimit = ageLimit;
         }
+        
         private string cardHolderName;
 
         public string CardHolderName
@@ -41,7 +42,7 @@ namespace MyBankerH2
             {
                 return cardNumber;
             }
-            protected set
+            set
             {
                 cardNumber = value;
             }

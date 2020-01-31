@@ -10,10 +10,8 @@ namespace MyBankerH2
     {
         static void Main(string[] args)
         {
-
-            //Card maestro = new Maestro();
             Person person = new Person("Rotatan", 50);
-            Bank bank = new Bank();
+            Bank bank = new MyBankerBank();
             string examples = bank.ShowExamples(person.Age);
             Console.WriteLine(examples);
 

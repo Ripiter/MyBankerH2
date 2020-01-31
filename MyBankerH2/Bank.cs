@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBankerH2
 {
-    class Bank
+    abstract class Bank
     {
         Card[] possibleCards =
         {
@@ -16,6 +16,20 @@ namespace MyBankerH2
                 new Maestro("Maestro"),
                 new Haevekort("Heavekort")
         };
+
+        private string bankAcountNumber;
+
+        protected string BankAcountNumber
+        {
+            get { return bankAcountNumber; }
+            private set { bankAcountNumber = value; }
+        }
+
+
+        public Bank(string bankAcountNumber)
+        {
+            this.BankAcountNumber = bankAcountNumber;
+        }
 
         public Card GivePersonCard(string cardName, string cardHolderName, string posibilites)
         {
@@ -36,6 +50,7 @@ namespace MyBankerH2
 
             //Generate new card number for the person
             card.GenerateCard();
+            card.CardNumber = card.CardNumber.Insert(0, BankAcountNumber + " ");
             return card;
         }
 

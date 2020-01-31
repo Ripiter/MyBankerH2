@@ -49,6 +49,7 @@
     <Compile Include="IExpire.cs" />
     <Compile Include="Maestro.cs" />
     <Compile Include="MasterCard.cs" />
+    <Compile Include="MyBankerBank.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
