@@ -50,7 +50,7 @@ namespace MyBankerH2
 
             //Generate new card number for the person
             card.GenerateCard();
-            card.CardNumber = card.CardNumber.Insert(0, BankAcountNumber + " ");
+            card.AddBankAcountNumber(BankAcountNumber);
             return card;
         }
 

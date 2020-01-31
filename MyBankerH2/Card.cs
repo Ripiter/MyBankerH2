@@ -15,6 +15,7 @@ namespace MyBankerH2
             this.AgeLimit = ageLimit;
         }
         
+
         private string cardHolderName;
 
         public string CardHolderName
@@ -42,7 +43,7 @@ namespace MyBankerH2
             {
                 return cardNumber;
             }
-            set
+            protected set
             {
                 cardNumber = value;
             }
@@ -71,6 +72,11 @@ namespace MyBankerH2
             }
         }
 
+
+        public void AddBankAcountNumber(string bankAcountNumber)
+        {
+            CardNumber = CardNumber.Insert(0, bankAcountNumber + " ");
+        }
         
 
     }
